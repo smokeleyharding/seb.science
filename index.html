@@ -39,7 +39,7 @@
         University of Copenhagen<br>
         Visiting Associate Professor, National University of Singapore
       </p>
-      <p class="hero-tagline">I study how law, ethics, and technology shape the future of medicine and science.</p>
+      <p class="hero-tagline">I develop innovative frameworks where law, ethics, medicine, and technology converge to accelerate medical and scientific progress and advance normative goals.</p>
       <div class="hero-links">
         <a href="https://scholar.google.com/citations?user=GIbhuosAAAAJ" class="btn" target="_blank" rel="noopener">Google Scholar</a>
         <a href="mailto:sebastian.porsdam.mann@jur.ku.dk" class="btn btn-outline">Email</a>
@@ -49,7 +49,7 @@
 
   <main>
 
-    <section id="about" class="section">
+    <section id="about" class="section fade-in">
       <div class="container">
         <h2>About</h2>
         <div class="about-content">
@@ -65,7 +65,7 @@
       </div>
     </section>
 
-    <section id="research" class="section section-alt">
+    <section id="research" class="section section-alt fade-in">
       <div class="container">
         <h2>Research</h2>
         <div class="research-grid">
@@ -96,7 +96,7 @@
       </div>
     </section>
 
-    <section id="publications" class="section">
+    <section id="publications" class="section fade-in">
       <div class="container">
         <h2>Selected Publications</h2>
         <p class="section-note">For a complete and up-to-date list, see
@@ -143,7 +143,7 @@
       </div>
     </section>
 
-    <section id="background" class="section section-alt">
+    <section id="background" class="section section-alt fade-in">
       <div class="container">
         <h2>Background</h2>
         <div class="background-columns">
@@ -224,7 +224,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section fade-in">
       <div class="container">
         <h2>Contact</h2>
         <p>I am based at the <a href="https://jura.ku.dk/english/" target="_blank" rel="noopener">Faculty of Law, University of Copenhagen</a>.</p>
@@ -244,8 +244,22 @@
   </footer>
 
   <script>
+    // Mobile nav toggle
     document.querySelector('.nav-toggle').addEventListener('click', function() {
       document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
     });
   </script>
 

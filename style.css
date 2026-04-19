@@ -158,6 +158,29 @@ body {
   pointer-events: none;
 }
 
+.hero-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.hero-photo img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 .hero h1 {
   font-family: var(--font-serif);
   font-size: 44px;
@@ -498,6 +521,15 @@ body {
 @media (max-width: 680px) {
   .hero {
     padding: 72px 0 56px;
+  }
+
+  .hero-grid {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .hero-photo img {
+    width: 120px;
   }
 
   .hero h1 {
